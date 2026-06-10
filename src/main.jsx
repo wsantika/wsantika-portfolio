@@ -7,6 +7,7 @@ import ServiceSection from "./components/ServiceSection";
 import ProjectSection from "./components/ProjectSection";
 import PricingSection from "./components/PricingSection";
 import ReviewSection from "./components/ReviewSection";
+import ContactSection from "./components/ContactSection";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -16,5 +17,6 @@ createRoot(document.getElementById("root")).render(
     <ProjectSection />
     <PricingSection />
     <ReviewSection />
+    <ContactSection />
   </StrictMode>,
 );
