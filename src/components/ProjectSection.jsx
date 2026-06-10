@@ -121,7 +121,7 @@ const ProjectSection = () => {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-black px-8 py-24 text-white md:px-20 lg:px-24"
+      className="reveal-section relative overflow-hidden bg-black px-8 py-24 text-white md:px-20 lg:px-24"
     >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:75px_75px]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.08),transparent_34%)]" />

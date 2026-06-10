@@ -2,7 +2,10 @@ const AboutSection = () => {
   const skills = ["Full Stack Dev", "TypeScript", "PHP", "Node.js", "Python"];
 
   return (
-    <section className="bg-black px-8 py-24 text-white md:px-20 lg:px-24">
+    <section
+      id="about"
+      className="reveal-section bg-black px-8 py-24 text-white md:px-20 lg:px-24"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="mb-4 font-mono text-sm font-bold uppercase tracking-[0.2em] text-cyan-400">

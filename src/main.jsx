@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import Navbar from "./components/Navbar";
+import ScrollReveal from "./components/ScrollReveal";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ServiceSection from "./components/ServiceSection";
@@ -11,6 +13,8 @@ import ContactSection from "./components/ContactSection";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <ScrollReveal />
+    <Navbar />
     <HeroSection />
     <AboutSection />
     <ServiceSection />

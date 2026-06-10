@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 800ms ease,
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-logo-spin {
+  animation: hero-logo-spin 9s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes hero-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-logo-spin {
+    animation: none;
+  }
+}

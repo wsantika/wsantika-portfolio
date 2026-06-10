@@ -2,18 +2,30 @@ const PricingSection = () => {
   const packages = [
     {
       name: "Starter",
-      price: "Start from Rp500K",
+      price: "Start from Rp1.2M",
       description:
         "Best for a simple profile page, landing page, or small business website.",
-      features: ["1-3 sections", "Responsive layout", "Basic SEO setup", "Contact button"],
+      features: [
+        "1-3 sections",
+        "Responsive layout",
+        "Basic SEO setup",
+        "Contact button",
+        "1 Year Maintenance",
+      ],
       highlighted: false,
     },
     {
       name: "Professional",
-      price: "Start from Rp1.5M",
+      price: "Start from Rp3M",
       description:
         "Ideal for a complete portfolio, company profile, or product website.",
-      features: ["Up to 6 sections", "Custom UI design", "Smooth interactions", "Performance optimization"],
+      features: [
+        "Up to 6 sections",
+        "1-6 Page",
+        "Smooth interactions",
+        "Performance optimization",
+        "1 Year Maintenance",
+      ],
       highlighted: true,
     },
     {
@@ -21,13 +33,22 @@ const PricingSection = () => {
       price: "Custom Quote",
       description:
         "For web apps that need dashboard, API integration, database, or custom logic.",
-      features: ["Frontend & backend", "API integration", "Database structure", "Custom workflow"],
+      features: [
+        "Frontend & backend",
+        "API integration",
+        "Database structure",
+        "Custom workflow",
+        "1 Year Maintenance",
+      ],
       highlighted: false,
     },
   ];
 
   return (
-    <section className="bg-black px-8 py-24 text-white md:px-20 lg:px-24">
+    <section
+      id="pricing"
+      className="reveal-section bg-black px-8 py-24 text-white md:px-20 lg:px-24"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="mb-4 font-mono text-sm font-bold uppercase tracking-[0.2em] text-cyan-400">

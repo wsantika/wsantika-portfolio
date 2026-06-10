@@ -24,7 +24,10 @@ const ReviewSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-black px-8 py-24 text-white md:px-20 lg:px-24">
+    <section
+      id="reviews"
+      className="reveal-section relative overflow-hidden bg-black px-8 py-24 text-white md:px-20 lg:px-24"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.08),transparent_35%)]" />
 
       <div className="relative mx-auto max-w-7xl">

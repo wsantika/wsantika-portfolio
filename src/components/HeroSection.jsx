@@ -36,7 +36,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black text-white">
+    <section
+      id="home"
+      className="reveal-section relative min-h-screen overflow-hidden bg-black text-white"
+    >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:75px_75px]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.14),transparent_34%)]" />
 
@@ -134,7 +137,7 @@ const HeroSection = () => {
           <img
             src={myLogo}
             alt="Logo"
-            className="relative mx-auto aspect-square w-full rounded-full border border-zinc-800 bg-zinc-950 object-cover shadow-[0_18px_60px_rgba(34,211,238,0.12)]"
+            className="hero-logo-spin relative mx-auto aspect-square w-full rounded-full border border-zinc-800 bg-zinc-950 object-cover shadow-[0_18px_60px_rgba(34,211,238,0.12)]"
           />
         </div>
       </div>
