@@ -1,37 +1,102 @@
+import { useEffect, useState } from "react";
 import myLogo from "../assets/my-logo.jpg";
 
-const HeroSection = () => {
-  return (
-    <section className="min-h-screen bg-white text-gray-900">
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-12 px-8 py-14 md:flex-row md:justify-between md:px-20 lg:px-24">
-        <div className="max-w-xl text-center md:text-left">
-          <p className="mb-4 text-sm font-semibold tracking-wide text-gray-500">
-            I am Santika
-          </p>
+const getGreetingInfo = () => {
+  const now = new Date();
+  const hour = now.getHours();
+  const time = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
-          <h1 className="text-4xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            Full-Stack
-            <br />
-            Developer &amp; Penjoki
+  if (hour >= 5 && hour < 12) {
+    return { greeting: "Good Morning", time };
+  }
+
+  if (hour >= 12 && hour < 17) {
+    return { greeting: "Good Afternoon", time };
+  }
+
+  if (hour >= 17 && hour < 21) {
+    return { greeting: "Good Evening", time };
+  }
+
+  return { greeting: "Good Night", time };
+};
+
+const HeroSection = () => {
+  const [greetingInfo, setGreetingInfo] = useState(getGreetingInfo);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setGreetingInfo(getGreetingInfo());
+    }, 60000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-black text-white">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:75px_75px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.14),transparent_34%)]" />
+
+      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-12 px-8 py-20 md:flex-row md:justify-between md:px-20 lg:px-24">
+        <div className="max-w-2xl text-center md:text-left">
+          <div className="mb-4 flex flex-col items-center gap-2 font-mono text-sm font-bold tracking-[0.2em] text-cyan-400 sm:flex-row md:justify-start">
+            <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-[11px] tracking-[0.12em] text-cyan-200">
+              Hello, {greetingInfo.greeting} • {greetingInfo.time}
+            </span>
+          </div>
+
+          <h1 className="text-4xl font-extrabold leading-none tracking-tight text-zinc-100 sm:text-5xl lg:text-7xl">
+            Stone. Code
           </h1>
 
-          <p className="mt-5 max-w-md text-sm font-medium leading-relaxed text-gray-500">
+          <p className="mt-6 max-w-xl text-sm font-semibold leading-7 text-zinc-400 sm:text-base">
             Blending thoughtful UI design with clean, responsive development to
             create websites that look great and perform flawlessly.
           </p>
 
-          <a
-            href="#"
-            className="mt-8 inline-flex rounded-lg border border-gray-300 bg-gray-900 px-4 py-2 text-xs font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] transition hover:bg-gray-700"
-          >
-            Contact Me
-          </a>
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
+            <a
+              href="#contact"
+              className="inline-flex rounded-lg border border-cyan-300 bg-cyan-300 px-5 py-3 text-sm font-bold text-zinc-950 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-200"
+            >
+              Contact Me
+            </a>
+            <a
+              href="#projects"
+              className="inline-flex rounded-lg border border-zinc-700 bg-zinc-950/80 px-5 py-3 text-sm font-bold text-zinc-200 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-400/60 hover:text-cyan-200"
+            >
+              View Projects
+            </a>
+          </div>
 
           <div className="mt-12 flex justify-center gap-8 md:justify-start">
             <a
+              href="mailto:wahyuputra7396@gmail.com"
+              aria-label="Email"
+              className="text-zinc-500 transition hover:text-cyan-300"
+            >
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 6h16v12H4V6Z" />
+                <path d="m4 7 8 6 8-6" />
+              </svg>
+            </a>
+
+            <a
               href="http://instagram.com/wsant1ka"
               aria-label="Instagram"
-              className="text-gray-500 transition hover:text-gray-900"
+              className="text-zinc-500 transition hover:text-cyan-300"
             >
               <svg
                 className="h-5 w-5"
@@ -46,7 +111,7 @@ const HeroSection = () => {
             <a
               href="https://github.com/wsantika"
               aria-label="GitHub"
-              className="text-gray-500 transition hover:text-gray-900"
+              className="text-zinc-500 transition hover:text-cyan-300"
             >
               <svg
                 className="h-5 w-5"
@@ -64,11 +129,12 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative w-full max-w-xs md:max-w-sm lg:max-w-md">
+        <div className="relative w-full max-w-64 md:max-w-80 lg:max-w-96">
+          <div className="absolute -inset-5 rounded-full bg-cyan-400/10 blur-2xl" />
           <img
             src={myLogo}
             alt="Logo"
-            className="mx-auto w-full rounded-2xl object-contain"
+            className="relative mx-auto aspect-square w-full rounded-full border border-zinc-800 bg-zinc-950 object-cover shadow-[0_18px_60px_rgba(34,211,238,0.12)]"
           />
         </div>
       </div>
